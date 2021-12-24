@@ -226,7 +226,7 @@ contract Partner is AccessControl {
                 marketersList.push(_marketersList[i]);
                 marketersListMapping[_marketersList[i]] = true;
 
-                uint256 _tokenAward = tokenAward * entranceFee;
+                uint256 _tokenAward = minHeldAward;
                 if(tokenAwardTotal - issuedTokenAwardTotal < _tokenAward){
                     _tokenAward = tokenAwardTotal - issuedTokenAwardTotal;
                 }
