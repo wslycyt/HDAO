@@ -132,7 +132,7 @@ contract Partner is AccessControl {
 
     constructor() {
         //Initialize the start time of the leaderboard cycle
-        currentCycleTime = uint32(block.timestamp) - uint32(block.timestamp + 86400 * 4 - 16 * 3600) % cycle;
+        currentCycleTime = uint32(block.timestamp) - uint32(block.timestamp) % cycle;
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
         leaderboardNo1 = new address[](leaderboards);
