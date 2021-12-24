@@ -323,6 +323,7 @@ contract Partner is AccessControl {
 
     //Liquidity Dividend
     function dividends(address sender, uint256 _toAwardFee) external {
+        require(msg.sender == tokenAddress);
         for(uint256 i = 0; i < invitationLevel; i++){
             if(invitationInfo[sender] != address(0)){
                 memberData[invitationInfo[sender]].liquidityRewards = memberData[invitationInfo[sender]].liquidityRewards + _toAwardFee * liquidityReward[i] / 100;
